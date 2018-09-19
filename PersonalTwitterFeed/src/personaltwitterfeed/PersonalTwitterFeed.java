@@ -17,6 +17,8 @@ import java.util.Scanner;
 public class PersonalTwitterFeed {
 
     private static int MAX_NUMBER_TWEETS = 200;
+    static int numTweets = 0;
+    static Scanner keyboard = new Scanner(System.in);
     
     /**
      * @param args the command line arguments
@@ -63,6 +65,11 @@ public class PersonalTwitterFeed {
         String date = simpleDateFormat.format(new Date());
         return date;
 
+    }
+    
+    public static void newTweet(String[] tweets){
+        tweets[numTweets]= keyboard.nextLine()+"\n"+getCurrentTimeStamp();
+            numTweets++;
     }
     
 }
